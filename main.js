@@ -1,7 +1,6 @@
 
 
 
-
 var current_card = null;
 
 var mode = "move";
@@ -19,6 +18,32 @@ $(document).mousedown(function(event) {
 $(document).mouseup(function(event) {
     current_card = null;
 })
+
+
+//$(document).find(".card").hover( cardOptionsIn, cardOptionsOut );
+
+/*
+var cards = document.getElementsByClassName('card');
+
+
+console.log(cards.length);
+
+for (let card of cards) {
+    console.log(card);
+    card.onmouseenter = function() {cardOptionsIn(card);}
+    card.onmouseleave = function() {cardOptionsOut(card);}
+}
+
+
+function cardOptionsIn(e) {
+    console.log("hovered");
+}
+
+
+function cardOptionsOut(e) {
+    
+}
+*/
 
 $(document).mousemove(function(event) { updateSize(event); } );
 

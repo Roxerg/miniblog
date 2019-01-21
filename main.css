@@ -20,6 +20,7 @@ h1 {
 	border-radius: 15px;
 	text-align: center;
 	background-color:rgba(255, 255, 255, 0.4);
+	position:relative;
 }
 
 .horizontal-flex {
@@ -30,6 +31,30 @@ h1 {
 
 }
 
+#button-1, #button-2 {
+	position: static;
+	border: none;
+	background-color: orange;
+	color: orange;
+	display: inline-block;
+	transition: 0.3s;
+	opacity: 0;
+	margin-top: 5px;
+	border-radius: 100%;
+	width: 20px;
+	height: 20px;
+}
+
+
+.card:hover > #button-1, .card:hover > #button-2 { 
+	opacity: 1;
+}
+
+
+
+#button-1 {
+	margin-left: 50%;
+}
 
 .card-container {
 	display: flex;
