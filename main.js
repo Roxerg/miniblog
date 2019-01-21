@@ -7,9 +7,13 @@ var current_card = null;
 var mode = "move";
 var modes = ["resize", "move"]
 
+var hidden = false;
+
 $(document).mousedown(function(event) {
     console.log("clicked");
-    current_card = event;
+    if ($(event.target).hasClass("card")) {
+        current_card = event;
+    }
 })
 
 $(document).mouseup(function(event) {
@@ -18,6 +22,29 @@ $(document).mouseup(function(event) {
 
 $(document).mousemove(function(event) { updateSize(event); } );
 
+
+function toggleMenu() {
+    var menu_content = $(document).find('.side-menu-content');
+    var menu = $(document).find('.side-menu');
+    var cont = $(document).find('.card-container');
+
+    if (hidden) {
+        //menu_content.css("visibility", "visible");
+        menu_content.fadeIn();
+        menu.css("width", "200px");
+        cont.css("min-width", "86.2%");
+        hidden = false;
+    }
+    else {
+        //menu_content.css("visibility", "hidden");
+        menu_content.fadeOut();
+        menu.css("width", "0px");
+        cont.css("min-width", "100%");
+        hidden = true;
+    }
+    
+
+}
 
 
 function updateSize(e) {
