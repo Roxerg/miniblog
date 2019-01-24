@@ -10,7 +10,12 @@ var hidden = false;
 
 $(document).mousedown(function(event) {
     console.log("clicked");
-    if ($(event.target).hasClass("card")) {
+    var target = $(event.target);
+    if (target.hasClass("card")) {
+        current_card = event;
+    }
+    else if (target.is("#card-text")) {
+        event.target = target.parent(); 
         current_card = event;
     }
 })
@@ -21,7 +26,9 @@ $(document).mouseup(function(event) {
 
 
 document.querySelector('.button').addEventListener('click', () => {
-	document.querySelector('.side-menu').classList.toggle('hidden');
+    document.querySelector('.side-menu').classList.toggle('hidden');
+    document.querySelector('.padding.left').classList.toggle('hidden');
+    document.querySelector('.padding.right').classList.toggle('hidden');
 })
 
 //$(document).find(".card").hover( cardOptionsIn, cardOptionsOut );
