@@ -31,6 +31,20 @@ document.querySelector('.button').addEventListener('click', () => {
     document.querySelector('.padding.right').classList.toggle('hidden');
 })
 
+
+var containingDiv = document.getElementById('cards');
+
+function doSomething() {
+  alert("Something");
+}
+
+containingDiv.addEventListener('click', function(e) {
+    console.log(e.target);
+  if('button-1' == e.target.getAttribute("id")) {
+    e.target.parentNode.remove();
+  }
+}, false);  
+
 //$(document).find(".card").hover( cardOptionsIn, cardOptionsOut );
 
 /*

@@ -6,7 +6,8 @@ body {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	justify-content: center;
+	
+	
 }
 h1 {
 	text-align: center;
@@ -17,6 +18,12 @@ h1 {
 .main-body {
 	display: flex;
 	flex-direction: row;
+
+	border: solid;
+	border-color: red;
+
+
+	
 }
 
 .card {
@@ -84,6 +91,8 @@ h1 {
 	z-index: 1;
 	flex-grow: 12;
 
+
+	border: solid;
 	
 }
 
@@ -124,8 +133,9 @@ h1 {
 	height: 50px;
 	background-color: white;
 	position: fixed;
+
 	justify-content: center;
-	align-items: center;
+	
 	z-index: 2;
 	float: top;
 	display: flex;
@@ -134,6 +144,8 @@ h1 {
 	
 	font-family: 'Abel';
 	box-shadow: 0.1em 0.1em 1em 0.01em grey;
+
+	border: solid;
 }
 
 .header-space {
@@ -142,7 +154,7 @@ h1 {
 }
 
 .side-menu {
-	background-color: rgb(44, 38, 38);
+	background-color: rgb(109, 104, 104);
 	width: 20em;
 	position: fixed;
 
