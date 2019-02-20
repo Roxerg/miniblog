@@ -1,0 +1,11 @@
+Flask==1.0.2
+Flask-FlatPages
+Frozen-Flask
+Jinja2
+Markdown
+MarkupSafe
+PyYAML
+Pygments
+Werkzeug
+itsdangerous
+wsgiref
