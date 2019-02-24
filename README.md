@@ -1,13 +1,9 @@
-# WorkFloe
-Productivity Dashboard
+# miniblog
+blog implementation WIP based on Flask and vanilla js
 
-## How to work on the Project - Collaborators Only
-* Go to the **Issues** tab, choose a module of your liking, go the _branch_ for that issue, or make one if it doesn't already exist, and work on all changes there.
+## TODO
+* Markdown support
+* everything else.
 
-* Once complete, you must merge with **master** and deal with all merge issues.
-
-* Comment generously, on *all* your code.
-
-* Write meaningful commit messages.
-
-* Update the #GitHub channel on Slack with progress, every time you finish a progress session.
+## motivation
+did some work on a frontend for an entirely different project that was abandoned by the team, decided to keep working on it. Also would like to enter the blogosphere, albeit after its golden days.
