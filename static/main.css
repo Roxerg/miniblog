@@ -6,32 +6,82 @@ body {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
+
+	scroll-behavior: smooth;
 	
 	
+}
+
+html {
+	scroll-behavior: smooth;
 }
 h1 {
 	text-align: center;
 	margin: auto;
 }
 
+h2 {
+	text-align: left;
+	margin-left: 1.6em;
+	font-family: "Abel";
+	color: Grey;
+	font-size: 3em;
+
+}
+
+p {
+	text-align: left;
+	margin-left: 2.5em;
+	margin-right: 2em;
+	color: #121314;
+	font-size: 1em;
+}
+
+a, a:link, a:visited {
+	font-size: 1.2em;
+	color:rgb(206, 206, 206);
+	text-decoration: none;
+
+}
+
+a:hover, a:active {
+	color:white;
+}
+
+
 
 .main-body {
 	display: flex;
 	flex-direction: row;
 
-	border: solid;
+	border: none;
 	border-color: red;
+}
+
+.closer {
+	line-height: 0.75em;
+}
+
+.little {
+	font-size: 0.6em;
+	color:rgb(177, 177, 177);
+}
+
+a:hover > .little {
+	color:rgb(206, 206, 206);
+}
 
 
-	
+scroll-container {
+	scroll-behavior: smooth;
 }
 
 .card {
 	border-style: none;
 	border-width: 0.15em;
 	border-color: rgb(214, 208, 208);
-	width: 70em;
-	height: 9em;
+	width: 70vw;
+	height: auto;
 	margin: 10px;
 	display: inline-block;
 	text-align: center;
@@ -46,6 +96,32 @@ h1 {
 	overflow: hidden;
 }
 
+.card-end {
+	border-style: none;
+	border-width: 0.15em;
+	border-color: rgb(214, 208, 208);
+	width: 70em;
+	height: 20em;
+	margin: 10em;
+	display: inline-block;
+	text-align: center;
+	background-color:transparent;
+	position:relative;
+	padding:0.04em;
+
+	user-select: none;
+
+	box-shadow: 0.05em 0.05em 0.1em 0.01em grey;
+
+	overflow: hidden;
+}
+
+.end {
+	margin-top: 10em;
+	color:gray;
+	text-align: center;
+}
+
 .horizontal-flex {
 	display: flex;
 	flex-direction: row;
@@ -55,30 +131,74 @@ h1 {
 }
 
 #button-1, #button-2 {
+	background-color: transparent;
 	position: static;
-	border: solid;
+	border: none;
 	border-color: black;
 	display: inline-block;
 	transition: 0.3s;
-	opacity: 0;
+	opacity: 0.3;
 	margin-top: 5px;
 	width: 1.2em;
 	height: 1.2em;
-	margin-right: 0.5em;
+	margin-right: 2.5em;
+	margin-bottom: 0.6em;
+
+	float: right;
+}
+
+#button-3 {
+	background-color: transparent;
+	position: static;
+	border: none;
+	border-color: black;
+	display: inline-block;
+	transition: 0.3s;
+	opacity: 0.3;
+	margin-top: 5px;
+	width: 1.2em;
+	height: 1.2em;
+	margin-right: 1.5em;
+	margin-bottom: 0.6em;
 
 	float: right;
 }
 
 
-.card:hover > #button-1, .card:hover > #button-2 { 
+.card:hover > #button-1, .card:hover > #button-2, .card:hover> #button-3{ 
 	opacity: 1;
 }
 
+.ico {
+	max-width: 1.4em;
+	max-height: 1.4em;
+}
 
+#datehover {
+	position: static;
+	border: none;
+	border-color: black;
+	display: inline-block;
+	transition: 0.3s;
+	opacity: 0.3;
+	margin-top: 5px;
+	width: auto;
+	height: 1.2em;
+	margin-right: 3.5em;
+	color: grey;
+
+	float: right;
+}
+
+
+.card:hover > #datehover {
+	opacity: 1;
+}
 
 #button-1 {
 	margin-right: 1em;
 }
+
 
 .card-container {
 	display: flex;
@@ -92,7 +212,7 @@ h1 {
 	flex-grow: 12;
 
 
-	border: solid;
+	border: none;
 	
 }
 
@@ -145,7 +265,7 @@ h1 {
 	font-family: 'Abel';
 	box-shadow: 0.1em 0.1em 1em 0.01em grey;
 
-	border: solid;
+	border: none;
 }
 
 .header-space {
@@ -158,6 +278,7 @@ h1 {
 	width: 20em;
 	position: fixed;
 
+	justify-content: center;
 
 	top: 50px;
 	bottom: 0;
@@ -170,11 +291,21 @@ h1 {
 	transition: transform 0.3s cubic-bezier(0,0,0.3,1);
 }
 
+.side-text {
+	margin-top: 3em;
+	margin-left: 2em;
+	color: white;
+	text-emphasis: bold;
+	font-family: "Abel";
+
+}
+
 .side-menu.hidden {
 	transform: translateX(-20em);
 }
 
 .button {
+	z-index: 1;
 	color: white;
 	float:left;
 	border: solid;
@@ -182,6 +313,8 @@ h1 {
 	margin-left: 1em;
 	width: 2em;
 	height: 2em;
+	margin-top:0.3em;
+	margin-bottom:0.3em;
 }
 
 .side-menu-space {

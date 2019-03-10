@@ -7,7 +7,7 @@ var mode = "move";
 var modes = ["resize", "move"]
 
 var hidden = false;
-
+/*
 $(document).mousedown(function(event) {
     console.log("clicked");
     var target = $(event.target);
@@ -19,6 +19,7 @@ $(document).mousedown(function(event) {
         current_card = event;
     }
 })
+*/
 
 $(document).mouseup(function(event) {
     current_card = null;
