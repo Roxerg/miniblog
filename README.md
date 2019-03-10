@@ -18,7 +18,7 @@ did some work on a frontend for an entirely different project that was abandoned
 ### To-Do
 
 - [ ] Social Media buttons
-- [ ] Comments?
+- [ ] Visitor Comments?
 - [ ] More extensive post styling
 
 
@@ -31,7 +31,9 @@ made with Flask.
 
 To launch the server simply run:
 
-> python index.py
+```
+python index.py
+```
 
 To add new articles create a **.md** file in the **pages** folder. The name of the file does not matter. There ~~is~~ *will be* an example file provided. 
 
