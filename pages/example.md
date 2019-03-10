@@ -4,7 +4,6 @@ published: 2019-03-11
 Hello, *World*!
 
 # biggest
-## bigger
 ### big
 #### medium
 ##### smaller
@@ -13,6 +12,3 @@ Hello, *World*!
 [link](https://rokasg.tech)
 
 Lorem ipsum dolor sit amet, …
-- [x] one
-- [ ] two
-- [ ] three

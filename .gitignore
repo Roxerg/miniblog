@@ -1,2 +1,2 @@
-pages/*
+*.md
 !example.md
