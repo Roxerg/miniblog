@@ -15,28 +15,8 @@
 
 <body>
 		<div class="header-bar">
-			
-				<span class="button"></span>
 				<h1>rokasg.<span style="color:orange">tech</span></h1>
-				<span class="button-invis"></span>
-			</div>
-
-		<div class="side-menu hidden">
-			<div class="side-text">
-					<nav>
-						{% for title in titles%}
-						<p class="closer"><a class="sidebar-text" href="#{{title.meta.title}}">
-							{{title.meta.title}}
-							<br>
-							<span class="little">{{title.meta.published}}</span>
-						</a></p>
-						{% endfor %}	
-					</nav>
-			</div>
 		</div>
-	
-
-		<div>
 
 
 		<div class="header-space">
@@ -51,7 +31,7 @@
 					<div class="card">
 						<div class="datehover" id="datehover">{{post.meta.published}}</div>
 						<p id="card-text">
-							<a id="{{post.meta.title}}" class="title" href="{{post.meta.link}}">{{post.meta.title}}</a>
+							<div id="{{post.meta.title}}" class="title-single">{{post.meta.title}}</div>
 							
 							
 							{{post | safe}}
@@ -64,14 +44,18 @@
 						<a id="button-3" class="twitter-share-button" target=_blank href="{{post.meta.twitter}}">
 								<img class="ico" src="https://i.imgur.com/Vb50xvP.png">
 						</a>
-
+						
 						<a id="button-3" class="twitter-share-button" target=_blank href="{{post.meta.twitter}}">
 									<img class="ico" src="https://i.imgur.com/fhzUhrT.png">
 						</a>
 						<!-- {{url_for('static', filename='fb.png')}} -->
+						
 					</div>
 				{%endfor%} 				
+				
 				<div>
+					<a class="back" href="{{home}}">Rest of the Blog</a>
+					<br>
 					<p id="card-text" class="end">
 					Rokas Gudavicius <br>
 					{{year}}
