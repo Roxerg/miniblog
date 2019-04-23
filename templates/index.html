@@ -6,6 +6,7 @@
 	<title>blog</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" type="text/css" media="screen" href="{{url_for('static', filename='main.css')}}" />
+	<link rel="stylesheet" href="{{ url_for('pygments_css') }}">
 	<link href='https://fonts.googleapis.com/css?family=Abel' rel='stylesheet'>
 	<link href="https://fonts.googleapis.com/css?family=Merriweather+Sans" rel="stylesheet">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
@@ -61,11 +62,11 @@
 							<img class="ico" src="https://i.imgur.com/645bivY.png">
 						</a>
 
-						<a id="button-3" class="twitter-share-button" target=_blank href="{{post.meta.twitter}}">
+						<a id="button-3" class="twitter-share-button" target=_blank href="{{post.meta.reddit}}">
 								<img class="ico" src="https://i.imgur.com/Vb50xvP.png">
 						</a>
 
-						<a id="button-3" class="twitter-share-button" target=_blank href="{{post.meta.twitter}}">
+						<a id="button-3" class="twitter-share-button" target=_blank href="{{post.meta.facebook}}">
 									<img class="ico" src="https://i.imgur.com/fhzUhrT.png">
 						</a>
 						<!-- {{url_for('static', filename='fb.png')}} -->
