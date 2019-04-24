@@ -1,7 +1,9 @@
 import sys
 import os, os.path
 from flask import Flask, render_template, send_from_directory, url_for, send_file, redirect
-from flask_flatpages import FlatPages
+from flask import render_template_string, Markup
+from flask_flatpages import FlatPages, pygmented_markdown, pygments_style_defs
+import markdown
 from datetime import datetime
 import time
 import urllib.parse
@@ -16,6 +18,24 @@ pages = FlatPages(app)
 site_url = "https://blog.rokasg.tech/"
 
 
+def code_renderer(text):
+    """Inject the markdown rendering into the jinga template"""
+    rendered_body = render_template_string(text)
+    pygmented_body = markdown.markdown(rendered_body, extensions=['codehilite', 'fenced_code'])
+    return pygmented_body
+
+@app.route('/pygments.css')
+def pygments_css():
+    return pygments_style_defs('tango'), 200, {'Content-Type': 'text/css'}
+
+app.config.update({
+    'FLATPAGES_EXTENSION': ['.md', '.markdown'],
+    'FLATPAGES_MARKDOWN_EXTENSIONS': ['codehilite', 'fenced_code'],
+    'FLATPAGES_HTML_RENDERER': code_renderer
+})
+
+
+
 def ts(s):
     return time.mktime(datetime.strptime(s.isoformat(), "%Y-%m-%d").timetuple())
 
@@ -26,6 +46,16 @@ def gettwitter(alt, title):
     url = getlink(alt)
     safetitle = urllib.parse.quote(title, safe='')
     return ("https://twitter.com/share?text=" + safetitle +"&url=" + url)
+
+def getfacebook(alt, title):
+    url = getlink(alt)
+    safetitle = urllib.parse.quote(title, safe='')
+    return ("https://www.facebook.com/sharer/sharer.php?u="+url)
+
+def getreddit(alt, title):
+    url = getlink(alt)
+    safetitle = urllib.parse.quote(title, safe='')
+    return ("https://reddit.com/submit/?url="+url+"&amp;resubmit=true&amp;title="+safetitle)
 
 
 
@@ -50,9 +80,11 @@ def main(name=None):
 
 
     for post in posts:
+        post.meta["reddit"] = getreddit(post.meta["alt"], post.meta["title"])
+        post.meta["facebook"] = getfacebook(post.meta["alt"], post.meta["title"])
         post.meta["twitter"] = gettwitter(post.meta["alt"], post.meta["title"])
         post.meta["link"] = getlink(post.meta["alt"])
-    
+         
 
     titles.sort(key=lambda x: ts(x.meta["published"]), reverse=True)
     js = url_for('static', filename='main.js')
