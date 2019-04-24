@@ -19,8 +19,6 @@ site_url = "https://blog.rokasg.tech/"
 def ts(s):
     return time.mktime(datetime.strptime(s.isoformat(), "%Y-%m-%d").timetuple())
 
-
-
 def getlink(alt):
     return (site_url + urllib.parse.quote(alt, safe='') +"/")
 
