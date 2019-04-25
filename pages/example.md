@@ -1,5 +1,5 @@
 title: Example Post
-published: 2019-11-11
+published: 
 alt: example 
 
 Hello, *World*!
