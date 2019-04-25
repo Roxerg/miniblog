@@ -18,8 +18,17 @@
 		<div class="header-bar">
 			
 				<span class="button"></span>
-				<h1>rokasg.<span style="color:orange">tech</span></h1>
+				<h1 class="rokasg">rokasg.<span style="color:orange">tech</span></h1>
+				
 				<span class="button-invis"></span>
+			</div>
+			<div class="rokasg-menu hidden">
+					<div class="padrighty">
+					<h1 class="righty">snake<span style="color:rgb(109, 104, 104)">.rokasg.tech</span></h1>
+					<h1 class="righty">blog<span style="color:rgb(109, 104, 104)">.rokasg.tech</span></h1>
+					<h1 class="righty">vapor<span style="color:rgb(109, 104, 104)">.rokasg.tech</span></h1>
+					<h1 class="righty">api<span style="color:rgb(109, 104, 104)">.rokasg.tech</span></h1>
+					</div>
 			</div>
 
 		<div class="side-menu hidden">
@@ -41,7 +50,7 @@
 
 
 		<div class="header-space">
-				<h1>you should not see this</h1>
+				<h1>u should not see this</h1>
 		</div>
 
 		<div class="main-body">
@@ -49,15 +58,16 @@
 			<div class="card-container" id="cards">
 
 				{%for post in posts%} 
-					<div class="card">
+					<div class="card" href="{{post.meta.link}}">
 						<div class="datehover" id="datehover">{{post.meta.published}}</div>
-						<p id="card-text">
-							<a id="{{post.meta.title}}" class="title" href="{{post.meta.link}}">{{post.meta.title}}</a>
+						<a id="{{post.meta.title}}" class="title" href="{{post.meta.link}}">{{post.meta.title}}</a>
+						<span id="card-text" href="{{post.meta.link}}">
+							
 							
 							
 							{{post | safe}}
 							
-						</p>
+						</span>
 						<a id="button-2" class="twitter-share-button" target=_blank href="{{post.meta.twitter}}">
 							<img class="ico" src="https://i.imgur.com/645bivY.png">
 						</a>

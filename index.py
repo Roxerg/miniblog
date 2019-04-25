@@ -75,6 +75,7 @@ def main(name=None):
     titles = []
 
     posts = [p for p in pages if 'published' in p.meta]
+
     posts.sort(key=lambda x: ts(x.meta["published"]), reverse=True)
     titles = posts
 
