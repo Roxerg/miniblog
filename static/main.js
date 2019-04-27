@@ -21,6 +21,27 @@ $(document).mousedown(function(event) {
 })
 */
 
+
+
+
+
+
+var nodes = document.getElementsByClassName("cutoff");
+
+
+for (var i=0; i<(nodes.length); i++) {
+    var el = document.createElement("div");
+    el.innerHTML = "Expand";
+    el.id = "expand";
+    nodes[i].parentNode.insertBefore(el, nodes[i]);
+}
+
+
+
+
+
+
+
 $(document).mouseup(function(event) {
     current_card = null;
 })
@@ -32,6 +53,44 @@ document.querySelector('.button').addEventListener('click', () => {
     document.querySelector('.padding.right').classList.toggle('hidden');
 })
 
+var hover_main = false;
+var hover_second = false;
+
+
+document.querySelector('.rokasg-menu').addEventListener("mouseover", () => {
+    hover_second = true;
+    hoverHandler();
+}, false)
+
+document.querySelector('.rokasg-menu').addEventListener("mouseout", () => {
+    hover_second = false;
+    hoverHandler();
+}, false)
+
+document.querySelector('.rokasg').addEventListener("mouseover", () => {
+    hover_main = true;
+    hoverHandler();
+    //document.querySelector('.rokasg-menu').classList.remove("hidden");
+}, false)
+
+document.querySelector('.rokasg'),addEventListener("mouseout", () => {
+    hover_main = false;
+    hoverHandler();
+        //document.querySelector('.rokasg-menu').classList.add("hidden");
+}, false)
+
+function hoverHandler() {
+    if (hover_main || hover_second) {
+        document.querySelector('.rokasg-menu').classList.remove("hidden");
+        console.log("either");
+    }
+    else {
+        document.querySelector('.rokasg-menu').classList.add("hidden");
+        console.log("none");
+    }
+}
+
+
 
 var containingDiv = document.getElementById('cards');
 
@@ -40,11 +99,30 @@ function doSomething() {
 }
 
 containingDiv.addEventListener('click', function(e) {
-    console.log(e.target);
+    console.log(e.target.tagName);
+
+
+  if("card-text" == e.target.getAttribute("id")) {
+      window.location.href = e.target.getAttribute("href");
+  }
+
+  if("P" == e.target.tagName || "H2" == e.target.tagName || "H3" == e.target.tagName || "H4" == e.target.tagName || "H1" == e.target.tagName) {
+    console.log("fuck me")  
+    window.location.href = e.target.parentNode.getAttribute("href");
+  }
+    
   if('button-1' == e.target.getAttribute("id")) {
     e.target.parentNode.remove();
   }
+
+  if("expand" == e.target.getAttribute("id")) {
+    e.target.parentNode.getElementsByClassName("cutoff")[0].classList.toggle("show");
+  }
 }, false);  
+
+
+
+
 
 //$(document).find(".card").hover( cardOptionsIn, cardOptionsOut );
 
