@@ -17,6 +17,8 @@ pages = FlatPages(app)
 
 site_url = "https://blog.rokasg.tech/"
 
+other_urls = ["vapor", "snake"]
+
 
 def code_renderer(text):
     """Inject the markdown rendering into the jinga template"""
@@ -90,7 +92,7 @@ def main(name=None):
     titles.sort(key=lambda x: ts(x.meta["published"]), reverse=True)
     js = url_for('static', filename='main.js')
     fb = url_for('static', filename="fb.png")
-    return render_template("index.html", name=name, posts=posts, titles=titles, js=js, fb=fb, year=datetime.now().year)
+    return render_template("index.html", name=name, posts=posts, titles=titles, js=js, fb=fb, year=datetime.now().year, other_urls=other_urls)
 
 
 @app.route('/<path:path>/')

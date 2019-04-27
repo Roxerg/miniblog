@@ -24,10 +24,10 @@
 			</div>
 			<div class="rokasg-menu hidden">
 					<div class="padrighty">
-					<h1 class="righty">snake<span style="color:rgb(109, 104, 104)">.rokasg.tech</span></h1>
-					<h1 class="righty">blog<span style="color:rgb(109, 104, 104)">.rokasg.tech</span></h1>
-					<h1 class="righty">vapor<span style="color:rgb(109, 104, 104)">.rokasg.tech</span></h1>
-					<h1 class="righty">api<span style="color:rgb(109, 104, 104)">.rokasg.tech</span></h1>
+					<h1 class="righty"><a href="https://rokasg.tech"><span style="color:rgb(109, 104, 104)" >rokasg.tech</span></a></h1>
+					{% for url in other_urls %}
+					<h1 class="righty"><a href="https://{{url}}.rokasg.tech">{{url}}<span style="color:rgb(109, 104, 104)" >.rokasg.tech</span></a></h1>
+					{% endfor %}
 					</div>
 			</div>
 
@@ -60,7 +60,8 @@
 				{%for post in posts%} 
 					<div class="card" href="{{post.meta.link}}">
 						<div class="datehover" id="datehover">{{post.meta.published}}</div>
-						<a id="{{post.meta.title}}" class="title" href="{{post.meta.link}}">{{post.meta.title}}</a>
+						<!-- href="{{post.meta.link}}" -->
+						<a id="{{post.meta.title}}" class="title"  onclick="toggleExpand(this)">{{post.meta.title}}</a>
 						<span id="card-text" href="{{post.meta.link}}">
 							
 							
@@ -68,22 +69,23 @@
 							{{post | safe}}
 							
 						</span>
-						<a id="button-2" class="twitter-share-button" target=_blank href="{{post.meta.twitter}}">
+
+						<a id="button-2" class="twitter-share-button hidden" target=_blank href="{{post.meta.twitter}}">
 							<img class="ico" src="https://i.imgur.com/645bivY.png">
 						</a>
 
-						<a id="button-3" class="twitter-share-button" target=_blank href="{{post.meta.reddit}}">
+						<a id="button-3" class="twitter-share-button hidden" target=_blank href="{{post.meta.reddit}}">
 								<img class="ico" src="https://i.imgur.com/Vb50xvP.png">
 						</a>
 
-						<a id="button-3" class="twitter-share-button" target=_blank href="{{post.meta.facebook}}">
+						<a id="button-3" class="twitter-share-button hidden" target=_blank href="{{post.meta.facebook}}">
 									<img class="ico" src="https://i.imgur.com/fhzUhrT.png">
 						</a>
 						<!-- {{url_for('static', filename='fb.png')}} -->
 					</div>
 				{%endfor%} 				
 				<div>
-					<p id="card-text" class="end">
+					<p id="card-text-end">
 					Rokas Gudavicius <br>
 					{{year}}
 					</p>
