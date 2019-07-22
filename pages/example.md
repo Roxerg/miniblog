@@ -1,5 +1,4 @@
 title: Example Post
-published: 
 alt: example 
 
 Hello, *World*!

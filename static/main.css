@@ -365,11 +365,11 @@ scroll-container {
 /* 16 total */
 
 .padding.left {
-	flex-grow: 3.7;	
+	flex-grow: 3.8;	
 }
 
 .padding.right{
-	flex-grow: 0.3;
+	flex-grow: 0.2;
 }
 
 
@@ -582,6 +582,26 @@ scroll-container {
 }
 
 
+.fa-level-up-alt-div {
+	text-align: center;
+	-webkit-text-fill-color: rgb(63, 63, 63);
+}
+
+.fa-level-up-alt {
+	font-size:5em;
+	align-content: center;
+	margin-left:0.5em;
+	margin-right: 0.5em;
+}
+.fa-level-up-alt-div:hover, .fa-level-up-alt-div:active {
+	-webkit-text-fill-color: rgb(134, 134, 134);
+}
+
+.fa-level-down-alt {
+	font-size: 0.6em;
+	margin-left: 0.5em;
+
+}
 #rokasg {
 
 }

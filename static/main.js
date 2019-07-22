@@ -25,6 +25,9 @@ $(document).mousedown(function(event) {
 
 function toggleExpand(elem) {
     var card = elem.parentNode
+    if (elem.getAttribute("class") == "fa-level-up-alt-div") {
+        card = card.parentNode
+    }
     var cardtext = card.querySelector("#card-text");
     cardtext.classList.toggle("card-text-toggle");
     card.classList.toggle("card-toggle");

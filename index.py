@@ -87,6 +87,17 @@ def main(name=None):
         post.meta["facebook"] = getfacebook(post.meta["alt"], post.meta["title"])
         post.meta["twitter"] = gettwitter(post.meta["alt"], post.meta["title"])
         post.meta["link"] = getlink(post.meta["alt"])
+        if "short" in post.meta:
+            post.meta["click"] = ""
+            post.meta["card"] = "card-toggle"
+            post.meta["cardtext"] = "card-text-toggle"  
+            post.meta["button"] = ""
+        else:
+            post.meta["click"] = "toggleExpand(this)"
+            post.meta["card"] = ""
+            post.meta["cardtext"] = ""
+            post.meta["button"] = "hidden"
+            
          
 
     titles.sort(key=lambda x: ts(x.meta["published"]), reverse=True)
